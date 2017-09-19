@@ -6,7 +6,9 @@
   "dependencies": {
     "_vue@2.4.4@vue": "^2.4.4",
     "mint-ui": "^2.2.9",
-    "vue": "^2.4.4"
+    "vue": "^2.4.4",
+    "vue-resource": "^1.3.4",
+    "vue-router": "^2.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
