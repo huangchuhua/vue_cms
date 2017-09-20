@@ -4,11 +4,13 @@
         <mt-header fixed title="前端10期vue_CMS"></mt-header>
 
         <!-- 内容区,展示子组件 -->
-        <router-view></router-view>
+        <transition mode="out-in">
+            <router-view></router-view>
+        </transition>
 
         <!-- 底部tabbar使用mui中的tabbar -->
         <nav class="mui-bar mui-bar-tab">
-            <router-link class="mui-tab-item mui-active" to="/home">
+            <router-link class="mui-tab-item " to="/home">
                 <span class="mui-icon mui-icon-home"></span>
                 <span class="mui-tab-label">首页</span>
             </router-link>
@@ -44,6 +46,16 @@ export default {
 .app-container {
     padding-top: 40px;
     padding-bottom: 50px;
+}
+
+.v-enter,
+.v-leave-to {
+    opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity .5s ease;
 }
 </style>
 

@@ -17,34 +17,8 @@ import "../lib/mui/css/mui.css";
 import "../lib/mui/css/icons-extra.css";
 
 
-//4.0引入组件
-import HomeContainer from "../components/tabbar/HomeContainer.vue";
-import memberContainer from "../components/tabbar/memberContainer.vue";
-import searchContainer from "../components/tabbar/searchContainer.vue";
-import shopcarContainer from "../components/tabbar/shopcarContainer.vue";
-//4.1导入路由模块
-import VueRouter from "vue-router";
-Vue.use(VueRouter);
-//创建路由对象
-const router = new VueRouter({
-    routes: [{
-            path: "/home",
-            component: HomeContainer
-        },
-        {
-            path: "/member",
-            component: memberContainer
-        },
-        {
-            path: "/search",
-            component: searchContainer
-        },
-        {
-            path: "/shopcar",
-            component: shopcarContainer
-        }
-    ]
-})
+//4导入自己的路由模块
+import router from "./router.js";
 
 //1.3创建vue实例
 const vm = new Vue({
