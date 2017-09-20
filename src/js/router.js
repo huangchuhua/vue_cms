@@ -6,6 +6,8 @@ import HomeContainer from "../components/tabbar/HomeContainer.vue";
 import memberContainer from "../components/tabbar/memberContainer.vue";
 import searchContainer from "../components/tabbar/searchContainer.vue";
 import shopcarContainer from "../components/tabbar/shopcarContainer.vue";
+
+import newsList from "../components/news/newsList.vue";
 //4.1导入路由模块
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
@@ -30,6 +32,10 @@ const router = new VueRouter({
         {
             path: "/shopcar",
             component: shopcarContainer
+        },
+        {
+            path: "/home/newsList",
+            component: newsList
         }
     ],
     linkActiveClass: "mui-active"
