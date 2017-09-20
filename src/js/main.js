@@ -20,6 +20,15 @@ import "../lib/mui/css/icons-extra.css";
 //4导入自己的路由模块
 import router from "./router.js";
 
+//5引入vue-resource进行数据请求
+import VueResource from "vue-resource";
+//注册vue-resource
+Vue.use(VueResource);
+//引入请求路径文档
+import config from "./globalConfig.js";
+//设置请求根目录
+Vue.http.options.root = config.baseUrl;
+
 //1.3创建vue实例
 const vm = new Vue({
     el: "#app",
