@@ -29,6 +29,9 @@ import config from "./globalConfig.js";
 //设置请求根目录
 Vue.http.options.root = config.baseUrl;
 
+//引入时间过滤模块
+import "./globalFilters.js";
+
 //1.3创建vue实例
 const vm = new Vue({
     el: "#app",
