@@ -9,6 +9,7 @@ import shopcarContainer from "../components/tabbar/shopcarContainer.vue";
 
 import newsList from "../components/news/newsList.vue";
 import newsInfo from "../components/news/newsInfo.vue";
+import photoList from "../components/photo/photoList.vue";
 
 
 //4.1导入路由模块
@@ -43,6 +44,9 @@ const router = new VueRouter({
         {
             path: "/home/newsInfo/:id",
             component: newsInfo
+        }, {
+            path: "/home/photoList",
+            component: photoList
         }
     ],
     linkActiveClass: "mui-active"
