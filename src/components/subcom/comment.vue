@@ -2,8 +2,8 @@
     <div>
         <h4>发表评论</h4>
         <hr/>
-        <textarea rows="3" placeholder="请说出你的梦想是什么（最多120个字）" maxlength="120"></textarea>
-        <mt-button type="primary" size="large">发表评论</mt-button>
+        <textarea rows="3" placeholder="请说出你的梦想是什么（最多120个字）" maxlength="120" v-model="msg"></textarea>
+        <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
 
         <!-- 评论内容 -->
         <div id="comment-list">
@@ -14,11 +14,13 @@
             </div>
         </div>
 
-        <mt-button type="danger" size="large">加载更多</mt-button>
+        <mt-button type="danger" size="large" @click="loadmore">加载更多</mt-button>
     </div>
 </template>
 
 <script>
+//引入Toast
+import { Toast } from "mint-ui";
 export default {
     data() {
         return {
@@ -40,6 +42,23 @@ export default {
                     this.commentList = this.commentList.concat(res.body.message);
                 } else {
                     console.log("获取评论列表失败");
+                }
+            })
+        },
+        loadmore() {
+            this.pageindex++;
+            this.getCommentList();
+        },
+        postComment() {
+            var url = "api/postcomment/" + this.artId;
+            this.$http.post(url, { content: this.msg }, { emulateJSON: true }).then(res => {
+                if (res.body.status === 0) {
+                    Toast("发表评论OK!");
+                    //在原数据前面添加评论内容
+                    this.commentList.unshift({ user_name: "匿名用户", add_time: new Date(), content: this.msg });
+                    this.msg = "";
+                } else {
+                    console.log("请求失败");
                 }
             })
         }
