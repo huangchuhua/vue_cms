@@ -10,6 +10,7 @@ import shopcarContainer from "../components/tabbar/shopcarContainer.vue";
 import newsList from "../components/news/newsList.vue";
 import newsInfo from "../components/news/newsInfo.vue";
 
+
 //4.1导入路由模块
 import VueRouter from "vue-router";
 Vue.use(VueRouter);

@@ -7,10 +7,15 @@
         </p>
         <hr>
         <div class="content" v-html="info.content"></div>
+
+        <!-- 评论区的组件 -->
+        <comment :artId="id"></comment>
     </div>
 </template>
 
 <script>
+//引入评论区的组件
+import comment from "../subcom/comment.vue";
 export default {
     data() {
         return {
@@ -33,7 +38,9 @@ export default {
                 }
             })
         }
-    }
+    },
+    //在父组件中定义局部子组件
+    components: { comment }
 }
 </script>
 
